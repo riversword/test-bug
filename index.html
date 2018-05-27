@@ -3,7 +3,22 @@
 <head></head>
 <body>
 
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script>
+	
+      $.ajax({
+	url: "http://vuemail.leanapp.cn/goods/list?page=1&pageSize=16&sort=1&priceLevel=all",
+	type: "get",
+        dataType: 'jsonp',
+        crossDomain: true,
+        success: function(data) {
+	  console.log("ajax");
+          console.log(data);
+        }
+      });
+	
+	
+	
 loadXMLDoc();
 function loadXMLDoc()
 {
