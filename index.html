@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head></head>
+<body>
+
+<script>
+loadXMLDoc();
+function loadXMLDoc()
+{
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	{
+		//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+		xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{
+		// IE6, IE5 浏览器执行代码
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function()
+	{
+    console.log("返回" ,xmlhttp.responseText);
+		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+			// document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+      console.log(xmlhttp.responseText);
+		}
+	}
+	xmlhttp.open("GET","http://vuemail.leanapp.cn/goods/list?page=1&pageSize=16&sort=1&priceLevel=all",true);
+	xmlhttp.send();
+}
+
+</script>
+</body>
+</html>
